@@ -1,0 +1,3 @@
+new Promise(function (resolve, reject) {
+    //   ....INSERT LONG-RUNNING OPERATION HERE...  
+});
