@@ -10,6 +10,10 @@ async function myPromise() {
             }
         }, 3000);
     });
-    
+    console.log(result);
     return result;
 };
+
+myPromise()
+    .then(res => console.log('Success: ' + res))
+    .catch(err => console.log('Error: ' + err));
