@@ -1,16 +1,15 @@
-new Promise(function (resolve, reject) {
-    //   ....INSERT LONG-RUNNING OPERATION HERE...  
-});
+let conditionToBeMet = true;
 
-const myPromise = new Promise(function(resolve, reject) {
-    setTimeout(function() {
-       // resolve('promise resolved');
-       reject('promise rejected');
-    }, 3000);
-})
-
-myPromise.then(function (result) {
-    console.log("Success: " + result);
-}).catch(function (err) {
-    console.log("Error: " + err)
-});
+async function myPromise() {
+    const result = await new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            if (conditionToBeMet) {
+                resolve('promise resolved');
+            } else {
+                reject("promise rejected");
+            }
+        }, 3000);
+    });
+    
+    return result;
+};
