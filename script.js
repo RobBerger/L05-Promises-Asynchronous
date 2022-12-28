@@ -4,6 +4,13 @@ new Promise(function (resolve, reject) {
 
 const myPromise = new Promise(function(resolve, reject) {
     setTimeout(function() {
-        resolve('promise resolved');
+       // resolve('promise resolved');
+       reject('promise rejected');
     }, 3000);
 })
+
+myPromise.then(function (result) {
+    console.log("Success: " + result);
+}).catch(function (err) {
+    console.log("Error: " + err)
+});
